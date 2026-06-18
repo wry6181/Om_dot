@@ -1,0 +1,61 @@
+# Browser data and caches (huge files)
+chromium/
+google-chrome/
+google-chrome-beta/
+google-chrome-unstable/
+BraveSoftware/
+microsoft-edge-dev/
+vivaldi/
+vivaldi-snapshot/
+brave-origin-beta-flags.conf
+brave-flags.conf
+brave-flags.conf.bak*
+
+# Password managers (sensitive + large)
+1Password/
+
+# Code editor caches
+Code/
+
+# Notes
+Typora/
+
+# VPN
+FortiClient/
+
+# Office
+libreoffice/
+
+# Application caches and junk
+comfy-cli/
+ComfyUI-LoRA-Manager/
+playit_gg/
+sunshine/
+Ultralytics/
+yay/
+blender/
+
+# Electron app data
+Electron/
+
+# Graphics caches
+DawnGraphiteCache/
+DawnWebGPUCache/
+GPUCache/
+GraphiteDawnCache/
+GPUPersistentCache/
+
+# Generic patterns
+node_modules/
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.pma
+*.pma-shm
+*.pma-wal
+__pycache__/
+*.pyc
+.vscode/
+.DS_Store
+Thumbs.db
