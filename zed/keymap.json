@@ -1,0 +1,62 @@
+[
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "c t": [
+        "action::Sequence",
+        [
+          [
+            "editor::InsertSnippet",
+            {
+              "snippet": "typedef struct ${1:name} ${1:name};\nstruct ${1:name} {\n\t$0\n};\n"
+            }
+          ],
+          "vim::SwitchToInsertMode"
+        ]
+      ],
+      "c e": [
+        "action::Sequence",
+        [
+          [
+            "editor::InsertSnippet",
+            {
+              "snippet": "enum ${1:name} {\n\t$0\n};"
+            }
+          ],
+          "vim::SwitchToInsertMode"
+        ]
+      ],
+      "g i": "editor::GoToImplementation",
+      "n l": "editor::LineDown",
+      "g e": "editor::MoveToEnd",
+      "g l": "go_to_line::Toggle",
+      "G D": "editor::GoToDefinitionSplit",
+      "G I": "editor::GoToImplementationSplit",
+      "f f": "file_finder::Toggle",
+      "f g": "project_search::ToggleFocus",
+      "g f": "buffer_search::Deploy",
+      "g b": "pane::GoBack",
+      "s i": "editor::Hover",
+      "s d": "editor::Hover",
+      "s r": "editor::FindAllReferences",
+      "g t": "terminal_panel::ToggleFocus",
+      "d f": ["action::Sequence", ["editor::SelectEnclosingSymbol", "editor::Cut", "editor::Cancel"]],
+      "c l": ["workspace::SendKeystrokes", "y y"],
+      "c f": ["action::Sequence", ["editor::SelectEnclosingSymbol", "editor::Copy", "editor::Cancel"]],
+      "S R": [
+        "action::Sequence",
+        [
+          "pane::SplitRight",
+          "editor::FindAllReferences"
+        ]
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-left": "workspace::ActivatePaneLeft",
+      "alt-right": "workspace::ActivatePaneRight"
+    }
+  }
+]

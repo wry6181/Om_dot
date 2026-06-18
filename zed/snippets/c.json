@@ -1,0 +1,21 @@
+{
+  "Typedef Struct": {
+    "prefix": "ct",
+    "body": [
+      "typedef struct ${1:name} ${1:name};",
+      "struct ${1:name} {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Create a typedef struct"
+  },
+  "Enum": {
+    "prefix": "ce",
+    "body": [
+      "enum ${1:name} {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Create an enum"
+  }
+}

@@ -1,0 +1,45 @@
+# Hyprland configuration - Omarchy Lua-based config
+# Learn how to configure Hyprland: https://wiki.hyprland.org/Configuring/
+
+# Add Omarchy Lua modules to package.path
+source = ~/.local/share/omarchy/default/hypr/omarchy.lua
+
+# Core defaults - environment variables, look & feel, input, windows
+source = ~/.local/share/omarchy/default/hypr/envs.lua
+source = ~/.local/share/omarchy/default/hypr/looknfeel.lua
+source = ~/.local/share/omarchy/default/hypr/input.lua
+source = ~/.local/share/omarchy/default/hypr/windows.lua
+
+# Autostart applications
+source = ~/.local/share/omarchy/default/hypr/autostart.lua
+
+# Keyboard bindings (media, clipboard, tiling, utilities)
+source = ~/.local/share/omarchy/default/hypr/plain-bindings.lua
+
+# Theme overrides
+source = ~/.config/omarchy/current/theme/hyprland.lua
+
+# User overrides (edit these files)
+source = ~/.config/hypr/monitors.conf
+source = ~/.config/hypr/input.conf
+source = ~/.config/hypr/bindings.conf
+source = ~/.config/hypr/envs.conf
+source = ~/.config/hypr/looknfeel.conf
+source = ~/.config/hypr/autostart.conf
+
+# App-specific configs
+source = ~/.local/share/omarchy/default/hypr/apps.lua
+
+# NVIDIA environment variables
+env = NVD_BACKEND,direct
+env = LIBVA_DRIVER_NAME,nvidia
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+
+misc:allow_session_lock_restore = false
+
+# Force Evince (PDF viewer) to tile instead of float
+windowrule = tile on, match:class ^(org.gnome.Evince)$
+windowrule = tag -floating-window, match:class ^(org.gnome.Evince)$
+
+# Toggle config flags dynamically
+source = ~/.local/state/omarchy/toggles/hypr/*.conf
