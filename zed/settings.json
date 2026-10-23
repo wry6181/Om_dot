@@ -59,5 +59,22 @@
           "tab_size": 4,
           "hard_tabs": false
         }
+      },
+      "lsp": {
+        "rust-analyzer": {
+          "settings": {
+            "rust-analyzer.cargo.target": "wasm32-unknown-unknown",
+            "rust-analyzer.cargo.allTargets": false
+          }
+        },
+        "clangd": {
+          "binary": {
+            "path": "/usr/bin/clangd",
+            "arguments": [
+              "--background-index",
+              "--query-driver=/home/sb/opt/arm-toolchain/bin/arm-none-eabi-gcc"
+            ]
+          }
+        }
       }
     }

@@ -1,0 +1,20 @@
+[Unit]
+Description=Local llama.cpp server for Qwen3.8-27B
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/.config/opencode/bin/llm serve
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=120
+StartLimitBurst=3
+TimeoutStopSec=30
+KillMode=mixed
+OOMScoreAdjust=200
+Nice=5
+Environment=LLM_PORT=8080
+Environment=LLM_HOST=127.0.0.1
+
+[Install]
+WantedBy=default.target
